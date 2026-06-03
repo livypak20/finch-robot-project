@@ -4,17 +4,22 @@ import com.birdbrain.Finch;
 
 public class FinalFinch extends Finch{
 
-        //array for most common values   
+    //creating array and variables to use for drawing
         static int nums[] = {10, 90, 3};
-    //boolean to check if program finished
         static boolean isFinished = false;
 
-    public FinalFinch(String device){
-        super(device);
-    }
+    //inheritance
+        public FinalFinch(String device){
+            super(device);
+        }
 
-    public void drawHouse(){
-            //variables for most common values
+    /** 
+     * Draws the house
+     * Parameter(s): None
+     * Return: void
+    */
+        public void drawHouse(){
+            //variables for most common values using values from the array
             int speed = nums[0];
             int rightAngle = nums[1];
             int shortDistance = nums[2];
@@ -55,10 +60,14 @@ public class FinalFinch extends Finch{
             setTurn("R", rightAngle, speed);
             setMove("F", 1.5, speed);
             
-            // isFinished = true;
+            //setting boolean to true in order to change beak color
+            isFinished = true;
 
-            // if(isFinished == true){
-            //     setBeak(0, 100, 100);
-            // }
+            //conditional that changes the peak color
+             if(isFinished == true){
+                 setBeak(0, 100, 100);
+                 pause(5);    
+             }
+             stopAll();
         }
 }
